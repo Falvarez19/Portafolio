@@ -1,0 +1,17 @@
+{% extends 'portfolio_app/base.html' %}
+
+{% block content %}
+<section id="proyectos" class="text-center min-h-[300px] py-12">
+    <h2 class="text-3xl mb-6 text-gray-200">Proyectos</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+            <h3 class="text-green-400 text-xl mb-4">Proyecto 1, Blog de recetas</h3>
+            <p class="text-gray-300">
+                Este proyecto fue realizado con Python y Django para la entrega final de mi curso de CoderHouse. 
+                Incluye registro de usuario, base de datos, un panel de perfil de usuario, login, formulario de contacto,
+                chat y funcionalidades para que los usuarios puedan subir y comentar recetas de otros e interactuar entre ellos.
+            </p>
+        </div>
+    </div>
+</section>
+{% endblock %}

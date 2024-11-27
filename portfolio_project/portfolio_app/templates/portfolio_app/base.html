@@ -1,0 +1,54 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Alvaro Alvarez{% endblock %}</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Calibre:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Estilo personalizado -->
+    <link rel="stylesheet" href="{% static 'portfolio_app/style.css' %}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+</head>
+<body class="bg-gray-900 text-gray-200 font-sans d-flex flex-column min-vh-100">
+
+       
+    </div>
+
+    <!-- Cabecera -->
+    <header class="fixed top-0 left-0 w-full bg-gray-900 shadow-lg z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="text-green-400 text-lg font-bold">Alvaro Alvarez</a>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href=" / " class="hover:text-green-400">Inicio</a></li>
+                    <li><a href="/about/" class="hover:text-green-400">Sobre mí</a></li>
+                    <li><a href="/projects/" class="hover:text-green-400">Proyectos</a></li>
+                    <li><a href="/contact/" class="hover:text-green-400">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="flex-grow-1">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-400 text-center py-4 mt-auto">
+        <a href="https://github.com/Falvarez19" target="_blank">
+        <i class="fab fa-github fa-2x"></i></a>
+        <a href="https://www.linkedin.com/in/alvaro-alvarez-a3585a31a/" target="_blank">
+        <i class="fab fa-linkedin fa-2x"></i>
+        </a>
+        <p>&copy; 2024 Mi Portafolio. Todos los derechos reservados.</p>
+    </footer>
+   
+</body>
+</html>
