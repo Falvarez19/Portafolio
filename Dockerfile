@@ -18,4 +18,4 @@ COPY . /code
 
 EXPOSE 8000
 
-CMD ["gunicorn","--bind",":8000","--workers","2","portfolio_project.wsgi"]
+CMD ["gunicorn", "portfolio_project.wsgi:application", "--bind", "0.0.0.0:8000"]

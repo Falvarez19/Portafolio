@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-h(&o6x98+uv^dr3)jx%vv2o9l!-j%8lc8nhnggh@mt_e9*z$s0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ferchoportafolio.fly.dev', '127.0.0.1', '0.0.0.0']
 
 
 # Application definition
@@ -125,3 +125,5 @@ STATICFILES_DIRS = [BASE_DIR / 'static']
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+import os 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
