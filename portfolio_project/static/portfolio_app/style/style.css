@@ -5,6 +5,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* Asegura que el cuerpo ocupe toda la altura del viewport */
+    margin: 0;
 }
 
 /* Navbar */
@@ -55,19 +56,19 @@ footer {
     color: #ccd6f6;
     padding: 1rem 0;
     text-align: center;
-    border-top: 1px solid #8b0000;
-    position: relative; /* Esto asegura que esté siempre estático */
+    position: absolute;
     bottom: 0;
     width: 100%;
+    border-top: 1px solid #8b0000;
 }
 
 /* Animación */
 @keyframes fadeIn {
-    0% {
+    from {
         opacity: 0;
         transform: translateY(20px);
     }
-    100% {
+    to {
         opacity: 1;
         transform: translateY(0);
     }
@@ -105,7 +106,43 @@ footer {
     transition: all 0.3s ease-in-out;
 }
 
-/* Alineación general */
-.text-center {
-    text-align: center;
+/* Modal */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Fijo en la pantalla */
+    right: 10px; /* Derecha con margen de 10px */
+    bottom: 10px; /* Abajo con margen de 10px */
+    z-index: 1000; /* Asegura que el modal esté sobre otros elementos */
+    border: 1px solid #0a0a0a; /* Borde ligero para el modal */
+    border-radius: 8px; /* Bordes redondeados */
+    background-color: #000; /* Fondo negro */
+    overflow: hidden; /* Esconde el contenido que se desborde */
+    width: 450px; /* Ancho del contenido del modal */
+    height: 340px; /* Altura del contenido del modal */
+}
+
+.modal-content {
+    width: 100%; /* Ancho completo del contenedor */
+    height: 100%; /* Altura completa del contenedor */
+}
+
+iframe {
+    width: 100%; /* Ancho completo del iframe */
+    height: 100%; /* Altura completa del iframe */
+    border: none; /* Sin borde para el iframe */
+}
+
+.close {
+    color: #fff; /* Icono de cierre en blanco para mejor visibilidad */
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 24px; /* Tamaño del icono de cierre */
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #ccc; /* Cambio de color al pasar el ratón */
+    text-decoration: none;
 }

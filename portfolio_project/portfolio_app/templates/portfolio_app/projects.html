@@ -6,20 +6,100 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
         <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
             <a href="https://sterakfood.fly.dev/blog/" class="text-white font-semibold text-xl mb-4 bg-green-500 hover:bg-green-600 py-2 px-4 rounded">
-                Proyecto 1, Blog de recetas
+                Blog de Recetas
             </a>
-            <br/>
             <p class="text-gray-300">
-                Este proyecto fue realizado con Python y Django para la entrega final de mi curso de CoderHouse. 
+                <br>
+                Este es mi primer proyecto realizado con Python y Django para la entrega final de mi curso de CoderHouse.
                 Incluye registro de usuario, base de datos, un panel de perfil de usuario, login, formulario de contacto,
                 chat y funcionalidades para que los usuarios puedan subir y comentar recetas de otros e interactuar entre ellos.
             </p>
             <center>
-                <a href="https://youtu.be/NulAMiea8Ec" target="_blank" class="flex items-center justify-center w-8 h-8 bg-gray-700 rounded-full text-gray-300 hover:bg-gray-600">
-                <i class="fas fa-play fa-2x"></i>
+                Presentacion de archivos
+                <br>
+                <div class="flex items-center justify-center space-x-4">
+                    <button onclick="openModal()" class="bg-gray-700 rounded-full text-gray-300 hover:bg-gray-600" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-play fa-lg"></i>
+                    </button>
+                    <a href="https://github.com/Falvarez19/Proyecto-final-alvarez" target="_blank">
+                        <i class="fab fa-github fa-2x"></i>
+                    </a>
+                </div>
             </center>
-            </a>
         </div>
     </div>
 </section>
+
+<!-- Contenedor Modal -->
+<div id="myModal" class="modal">
+    <!-- Contenido Modal -->
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <iframe src="https://www.youtube.com/embed/NulAMiea8Ec" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    var modal = document.getElementById("myModal");
+    var btn = document.getElementById("myBtn"); // Ensure the button has this ID
+    var span = document.getElementsByClassName("close")[0];
+    var iframe = document.querySelector("#myModal iframe");
+    var iframeSrc = iframe.src; // Save the original src of the iframe
+
+    function openModal() {
+        modal.style.display = "block";
+    }
+
+    function closeModal() {
+        modal.style.display = "none";
+        iframe.src = ""; // Clear the src of the iframe
+        setTimeout(function() {
+            iframe.src = iframeSrc; // Reset the original src after closing
+        }, 500); // Wait 500ms before resetting to ensure it stops
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+            iframe.src = "";
+            setTimeout(function() {
+                iframe.src = iframeSrc;
+            }, 500);
+        }
+    }
+
+    function dragElement(elmnt) {
+        var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+        elmnt.onmousedown = dragMouseDown;
+
+        function dragMouseDown(e) {
+            e = e || window.event;
+            e.preventDefault();
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            document.onmouseup = closeDragElement;
+            document.onmousemove = elementDrag;
+        }
+
+        function elementDrag(e) {
+            e = e || window.event;
+            e.preventDefault();
+            pos1 = pos3 - e.clientX;
+            pos2 = pos4 - e.clientY;
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+            elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+        }
+
+        function closeDragElement() {
+            document.onmouseup = null;
+            document.onmousemove = null;
+        }
+    }
+
+    dragElement(modal); // Make the modal draggable
+</script>
 {% endblock %}
