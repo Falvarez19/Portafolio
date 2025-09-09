@@ -25,8 +25,7 @@ SECRET_KEY = 'django-insecure-h(&o6x98+uv^dr3)jx%vv2o9l!-j%8lc8nhnggh@mt_e9*z$s0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ferchoportafolio.fly.dev', '127.0.0.1', '0.0.0.0']
-
+ALLOWED_HOSTS = ["ferchoportafolio.fly.dev", "localhost", "127.0.0.1"]
 
 # Application definition
 

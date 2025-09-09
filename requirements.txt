@@ -1,2 +1,4 @@
-Django>=3.2
-gunicorn
+Django>=4.2
+gunicorn>=21.2
+# whitenoise si sirves estáticos por Django:
+# whitenoise>=6.6
