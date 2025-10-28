@@ -1,6 +1,5 @@
 app = "ferchoportafolio"
-primary_region = "ewr"
-
+primary_region = "eze"
 [build]
   builder = "paketobuildpacks/builder-jammy-base:latest"  # <-- Buildpacks de Python
 
